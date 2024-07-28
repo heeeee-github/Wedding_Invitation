@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="./img/img_0.jpg">
+    <meta property="og:title" content="♥저희 결혼식에 초대합니다♥">
+    <meta property="og:description" content="여기를 눌러 링크를 확인하세요.">
+
+    <title>Wedding Invitation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="flower-container"></div>
+    <h1> <img class="main-image" src="./img/img_0.jpg" alt="" ></h1>
+    <div class="container fade-in">
+        <audio id="background-music" controls autoplay loop>
+            <source src="Angels_By_My_Side.mp3" type="audio/mpeg">
+        </audio>
+    
+        <div id="intro" class="section">
+            <h2>2024.10.27. (일)</h2>
+            <img class="main-image" src="./img/img_0.jpg" alt="웨딩 메인사진" >
+            <h3>
+                <img src="./img/groom.png" alt="신랑" class="inline-image"> 
+                이기동 
+                <span>♥</span>
+                공미희
+                <img src="./img/bride.png" alt="신부" class="inline-image">
+            </h3>
+            <p>2024년 10월 27일 일요일 오후 2시<br>아벤티움 서울 브라운스톤건물 3층</p>
+        </div>
+        
+        <div class="section">
+            <h2> <img src="./img/invite.png" alt="" class="inline-image"> 초대합니다  </h2>
+            <p>
+            <br>
+            매년 10월 27일이 되면,<br>
+            저희는 이 날의 사진을 꺼내보며<br>
+            인생에서 가장 행복했던 기억들을 <br>
+            떠올릴 것입니다.<br>
+            <br>
+            그 때<br>
+            그 사진 속에<br>
+            저희와 함께 웃고 있는<br>
+            여러분이 있었으면 좋겠습니다.</p>
+            <p>
+            <br>
+            <br>
+            이근배 · 신응선 의 차남 기동<br>
+            공기곤 · 배선자 의 차녀 미희</p>
+            <button id="contactBtn" >연락하기</button>
+        </div>
+        
+        <div id="schedule" class="section">
+            <h2> <img src="./img/calender.png" alt="" class="inline-image"> 모시는 날</h2>
+            <div id="calendar"></div>
+            <p id="dday"></p>
+        </div>
+        
+        <div id="gallery" class="section">
+            <h2> <img src="./img/gallery.png" alt="" class="inline-image"> 갤러리</h2>
+            <div id="galleryImages"></div>
+        </div>
+        
+        <div id="location" class="section">
+            <h2> <img src="./img/location.png" alt="" class="inline-image"> 오시는 길</h2>
+            <img class="main-image" src="./img/loacation.jpg" alt="오시는 방법 이미지" >
+            <div>
+                <p>아벤티움 서울 브라운스톤 3층 <button class="copy-address-btn" address = "서울 중구 청파로 464">주소 복사</button></p>
+                <a href="https://map.naver.com/p/entry/place/37117082?c=15.00,0,0,0,dh" class="btn_naver" target="_blank">Naver</a>
+                <a href="https://map.kakao.com/?q=%EC%B1%84%ED%94%8C%EC%9B%A8%EB%94%A9%ED%99%80%20%EC%95%84%EB%B2%A4%ED%8B%B0%EC%9B%80" class="btn_kakao" target="_blank">카카오맵</a>
+                <a href="https://tmap.life/cbcfdf91" class="btn_T" target="_blank">T맵</a>
+            
+            </div>
+        </div>
+        
+        <div id="accounting" class="section">
+            <h2><img src="./img/flower.png" alt="" class="inline-image"></> 마음전하실 곳</h2>
+            <h3><img src="./img/groom.png" alt="" class="inline-image"></> 신랑측</h3>
+            <ul>
+                <li> <span> 부　</span> <span>이근배</span> <span>국민 958802-01-227574</span> <button class="copy-account-btn" data-account="국민 95880201227574">복사하기</button></li>
+                <li> <span> 모　</span> <span>신응선</span> <span>국민 958802-01-227574</span> <button class="copy-account-btn" data-account="국민 95880201227574">복사하기</button></li>
+                <li> <span> 신랑</span> <span>이기동</span> <span>국민 958802-01-227574</span> <button class="copy-account-btn" data-account="국민 95880201227574">복사하기</button></li>
+            </ul>
+            <h3><img src="./img/bride.png" alt="" class="inline-image"></> 신부측</h3>
+            <ul>
+                <li> <span> 부　</span> <span>공기곤</span> <span>국민 958802-01-227574</span> <button class="copy-account-btn" data-account="국민 95880201227574">복사하기</button></li>
+                <li> <span> 모　</span> <span>배선자</span> <span>국민 958802-01-227574</span> <button class="copy-account-btn" data-account="국민 95880201227574">복사하기</button></li>
+                <li> <span> 신부</span> <span>이기동</span> <span>국민 958802-01-227574</span> <button class="copy-account-btn" data-account="국민 95880201227574">복사하기</button></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>기동 ♥ 미희 올림</p>
+            <p>© 2024 May.K.</p>
+        </footer>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <ul class="contact-list">
+                <h3>신랑측</h3>
+                    <li><span>　부　</span>이근배<a href="tel:+821066439316" >연락</a> <a href="sms:+821066439316" class="contact-link">문자</a></li>
+                    <li><span>　모　</span>신응선<a href="tel:+821066439316" >연락</a> <a href="sms:+821066439316" class="contact-link">문자</a></li>
+                    <li><span>　신랑</span>이기동<a href="tel:+821066439316" >연락</a> <a href="sms:+821066439316" class="contact-link">문자</a></li>
+                <h3>신부측</h3>
+                    <li><span>　부　</span>공기곤<a href="tel:+821066439316" >연락</a> <a href="sms:+821066439316" class="contact-link">문자</a></li>
+                    <li><span>　모　</span>배선자<a href="tel:+821066439316" >연락</a> <a href="sms:+821066439316" class="contact-link">문자</a></li>
+                    <li><span>　신부</span>공미희<a href="tel:+821066439316" >연락</a> <a href="sms:+821066439316" class="contact-link">문자</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
