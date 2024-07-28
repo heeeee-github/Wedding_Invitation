@@ -164,6 +164,39 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+document.addEventListener('touchend', function(e) {
+    var now = Date.now();
+    var touchDuration = now - e.timeStamp;
+    if (touchDuration > 500) { // 500ms 이상일 경우 길게 누른 것으로 간주
+        e.preventDefault(); // 길게 누르기 방지
+    }
+});
+
+navigator.mediaDevices.enumerateDevices().then(function(devices) {
+    devices.forEach(function(device) {
+        if (device.kind === 'videoinput') {
+            console.log('녹화 장치 발견:', device.label);
+        }
+    });
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'PrintScreen') {
+        alert('스크린샷 기능이 감지되었습니다!');
+        // 스크린샷 시도를 방지하는 추가적인 코드
+    }
+});
+
+        // 핀치 줌 방지
+document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+        event.preventDefault(); // 핀치 줌 방지
+    }
+}, { passive: false });
+
+document.addEventListener('gesturestart', function(event) {
+    event.preventDefault(); // 핀치 줌 방지
+});
 // // 드래그 방지
 // document.addEventListener('dragstart', function(e) {
 //     e.preventDefault();

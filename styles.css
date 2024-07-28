@@ -10,6 +10,8 @@
 }
 
 /* Global Styles */
+
+html, body {touch-action: pan-x pan-y; /* 핀치 줌을 방지합니다 */}
 body {
     font-family: 'Noto Serif KR', serif;
     line-height: 1.8;
@@ -62,8 +64,8 @@ h2, h3 {
 }
 
 .gallery-image {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 20px;
     transition: transform 1.0s ease;
@@ -341,3 +343,23 @@ footer {
     0% { transform: translate(0, -10vh) rotate(0deg); }
     100% { transform: translate(20vw, 110vh) rotate(720deg); }
 }
+
+.image-container {
+    position: relative;
+  }
+  
+  .image-container img {
+    display: block;
+  }
+  
+  .image-container:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0);
+    pointer-events: none;
+  }
+  
