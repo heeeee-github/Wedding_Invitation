@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('keydown', function(e) {
     // PrintScreen 키 방지
     if (e.key === 'PrintScreen') {
-        alert('캡처는 금지되어 있습니다.');
+        alert('스크린샷 기능이 감지되었습니다.');
         return false;
     }
 
@@ -164,13 +164,13 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
-document.addEventListener('touchend', function(e) {
-    var now = Date.now();
-    var touchDuration = now - e.timeStamp;
-    if (touchDuration > 200) { // 500ms 이상일 경우 길게 누른 것으로 간주
-        e.preventDefault(); // 길게 누르기 방지
-    }
-});
+// document.addEventListener('touchend', function(e) {
+//     var now = Date.now();
+//     var touchDuration = now - e.timeStamp;
+//     if (touchDuration > 200) { // 500ms 이상일 경우 길게 누른 것으로 간주
+//         e.preventDefault(); // 길게 누르기 방지
+//     }
+// });
 
 navigator.mediaDevices.enumerateDevices().then(function(devices) {
     devices.forEach(function(device) {
@@ -178,13 +178,6 @@ navigator.mediaDevices.enumerateDevices().then(function(devices) {
             console.log('녹화 장치 발견:', device.label);
         }
     });
-});
-
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'PrintScreen') {
-        alert('스크린샷 기능이 감지되었습니다!');
-        // 스크린샷 시도를 방지하는 추가적인 코드
-    }
 });
 
         // 핀치 줌 방지
