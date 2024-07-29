@@ -145,9 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // 마우스 오른쪽 버튼 클릭 방지
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
+// document.addEventListener('contextmenu', function(e) {
+//     e.preventDefault();
+// });
 
 // 키보드의 특정 키 조합 방지 (PrintScreen, Ctrl+P, Ctrl+S 등)
 document.addEventListener('keydown', function(e) {
@@ -167,7 +167,7 @@ document.addEventListener('keydown', function(e) {
 document.addEventListener('touchend', function(e) {
     var now = Date.now();
     var touchDuration = now - e.timeStamp;
-    if (touchDuration > 500) { // 500ms 이상일 경우 길게 누른 것으로 간주
+    if (touchDuration > 200) { // 500ms 이상일 경우 길게 누른 것으로 간주
         e.preventDefault(); // 길게 누르기 방지
     }
 });
@@ -197,6 +197,7 @@ document.addEventListener('touchstart', function(event) {
 document.addEventListener('gesturestart', function(event) {
     event.preventDefault(); // 핀치 줌 방지
 });
+
 // // 드래그 방지
 // document.addEventListener('dragstart', function(e) {
 //     e.preventDefault();
