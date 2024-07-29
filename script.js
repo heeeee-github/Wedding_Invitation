@@ -131,6 +131,8 @@ function createFlowerPetals() {
     }
 }
 
+
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     generateCalendar();
