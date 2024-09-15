@@ -50,7 +50,7 @@ function updateDday() {
     
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     
-    document.getElementById('dday').textContent = `${days}`;
+    document.getElementById('dday').textContent = `D - ${days} 일`;
 }
 
 // Gallery
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayImage(imageIndex) {
         showcaseImage.style.backgroundImage = `url(${imageBasePath}/img_${imageIndex}.jpg)`;
-        imageTracker.textContent = `${imageIndex} / ${totalImages}`;
+        // imageTracker.textContent = `${imageIndex} / ${totalImages}`;
         preloadSurroundingImages(imageIndex);
     }
 

@@ -425,31 +425,32 @@ footer {
     background-size: cover;
     background-position: center;
     transition: opacity 0.5s ease-in-out;
+    border-radius: 30px;
 }
 
 .showcase-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(77, 77, 77, 0.5);
     color: white;
     border: none;
     /* padding: 10px 15px; */
-    font-size: 18px;
+    font-size: 15px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .showcase-nav:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(55, 55, 55, 0.8);
 }
 
 .showcase-nav.previous-btn {
-    left: 10px;
+    left: 5px;
 }
 
 .showcase-nav.next-btn {
-    right: 10px;
+    right: 5px;
 }
 
 .image-tracker {
