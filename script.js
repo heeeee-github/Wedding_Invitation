@@ -65,6 +65,41 @@ function loadGalleryImages() {
     }
 }
 
+//Gallery 2 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const showcaseImage = document.getElementById('showcaseImage');
+    const previousBtn = document.getElementById('previousBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const imageTracker = document.getElementById('imageTracker');
+
+    let currentImageIndex = 1;
+    const totalImages = 15; // 총 이미지 수
+    const imageBasePath = './img'; // 이미지 기본 경로
+
+    function displayImage(imageIndex) {
+        showcaseImage.style.backgroundImage = `url(${imageBasePath}/img_${imageIndex}.jpg)`;
+        imageTracker.textContent = `${imageIndex} / ${totalImages}`;
+    }
+
+    function showNextImage() {
+        currentImageIndex = currentImageIndex % totalImages + 1;
+        displayImage(currentImageIndex);
+    }
+
+    function showPreviousImage() {
+        currentImageIndex = (currentImageIndex - 2 + totalImages) % totalImages + 1;
+        displayImage(currentImageIndex);
+    }
+
+    // 초기 이미지 표시
+    displayImage(currentImageIndex);
+
+    // 이벤트 리스너 추가
+    nextBtn.addEventListener('click', showNextImage);
+    previousBtn.addEventListener('click', showPreviousImage);
+});
+
 // Copy account number
 function setupCopyAccountButtons() {
     const copyAccountButtons = document.querySelectorAll('.copy-account-btn');

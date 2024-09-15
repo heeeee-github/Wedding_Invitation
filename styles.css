@@ -397,3 +397,63 @@ footer {
     z-index: 1000;
     pointer-events: none;
     } */
+
+
+/*////////////////////////////////*/
+
+.photo-showcase {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.showcase-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    /* padding-bottom: 75%; 4:3 aspect ratio */
+    padding-bottom: 150%; /* 4:3 aspect ratio */
+    overflow: hidden;
+}
+
+.showcase-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.showcase-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.showcase-nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.showcase-nav.previous-btn {
+    left: 10px;
+}
+
+.showcase-nav.next-btn {
+    right: 10px;
+}
+
+.image-tracker {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
