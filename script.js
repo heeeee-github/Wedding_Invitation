@@ -147,9 +147,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // 마우스 오른쪽 버튼 클릭 방지
-// document.addEventListener('contextmenu', function(e) {
-//     e.preventDefault();
-// });
+document.addEventListener('contextmenu', function(e) {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault(); // 우클릭 또는 꾹 누르기 방지
+    }
+  });
 
 // 키보드의 특정 키 조합 방지 (PrintScreen, Ctrl+P, Ctrl+S 등)
 document.addEventListener('keydown', function(e) {
