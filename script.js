@@ -50,7 +50,7 @@ function updateDday() {
     
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     
-    document.getElementById('dday').textContent = `D - ${days}일`;
+    document.getElementById('dday').textContent = `${days}`;
 }
 
 // Gallery
@@ -66,7 +66,6 @@ function loadGalleryImages() {
 }
 
 //Gallery 2 
-
 document.addEventListener('DOMContentLoaded', function() {
     const showcaseImage = document.getElementById('showcaseImage');
     const previousBtn = document.getElementById('previousBtn');
@@ -74,12 +73,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageTracker = document.getElementById('imageTracker');
 
     let currentImageIndex = 1;
-    const totalImages = 15; // 총 이미지 수
-    const imageBasePath = './img'; // 이미지 기본 경로
+    const totalImages = 15;
+    const imageBasePath = './img';
+    const imagesToPreload = 5; // 미리 로드할 이미지 수
+    const loadedImages = new Set();
+
+    function preloadImage(index) {
+        if (loadedImages.has(index)) return;
+        const img = new Image();
+        img.src = `${imageBasePath}/img_${index}.jpg`;
+        loadedImages.add(index);
+    }
+
+    function preloadSurroundingImages(currentIndex) {
+        for (let i = -2; i <= 2; i++) {
+            const indexToLoad = ((currentIndex - 1 + i + totalImages) % totalImages) + 1;
+            preloadImage(indexToLoad);
+        }
+    }
 
     function displayImage(imageIndex) {
         showcaseImage.style.backgroundImage = `url(${imageBasePath}/img_${imageIndex}.jpg)`;
         imageTracker.textContent = `${imageIndex} / ${totalImages}`;
+        preloadSurroundingImages(imageIndex);
     }
 
     function showNextImage() {
@@ -90,6 +106,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function showPreviousImage() {
         currentImageIndex = (currentImageIndex - 2 + totalImages) % totalImages + 1;
         displayImage(currentImageIndex);
+    }
+
+    // 초기 이미지들 프리로드
+    for (let i = 1; i <= imagesToPreload; i++) {
+        preloadImage(i);
     }
 
     // 초기 이미지 표시
