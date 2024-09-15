@@ -255,8 +255,8 @@ p {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid var(--secondary-color);
-    width: 75%;
-    max-width: 220px;
+    width: 80%;
+    max-width: 300px;
     border-radius: 10px;
     font-family: 'Noto Serif KR', serif;
     color: var(--text-color);
@@ -286,10 +286,9 @@ p {
 
 
 .contact-list li {
-    font-size: 0.8em;
     margin-bottom: 15px;
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -297,6 +296,7 @@ p {
 .contact-link:hover {
     background-color: #f28482;
 }
+
 
 /* Accounting Section */
 #accounting h3 {

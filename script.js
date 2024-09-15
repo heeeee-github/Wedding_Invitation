@@ -178,20 +178,48 @@ function setupModal() {
     const btn = document.getElementById("contactBtn");
     const span = document.getElementsByClassName("close")[0];
 
-    btn.onclick = function() {
-        modal.style.display = "block";
+    if (!modal || !btn) {
+        console.error("Modal or button not found");
+        return;
     }
 
-    span.onclick = function() {
-        modal.style.display = "none";
+    btn.onclick = function() {
+        modal.style.display = "block";
+        console.log("Modal opened");
+    }
+
+    if (span) {
+        span.onclick = function() {
+            modal.style.display = "none";
+            console.log("Modal closed by close button");
+        }
+    } else {
+        console.warn("Close button not found in modal");
     }
 
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
+            console.log("Modal closed by clicking outside");
         }
     }
+
+    // ESC 키를 눌러 모달 닫기
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape" && modal.style.display === "block") {
+            modal.style.display = "none";
+            console.log("Modal closed by ESC key");
+        }
+    });
+
+    console.log("Modal setup completed");
 }
+
+// 페이지 로드 시 setupModal 함수 호출
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM content loaded, setting up modal");
+    setupModal();
+});
 
 // Flower petal animation
 function createFlowerPetals() {
