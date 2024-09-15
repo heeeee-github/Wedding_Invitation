@@ -307,14 +307,14 @@ p {
 }
 
 #accounting .account-info {
-    font-weight: 300;
+    font-weight: 200;
 }
 
 #accounting li {
     list-style-type: none;
     margin-bottom: 15px;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     font-size: 0.7em;
 }
