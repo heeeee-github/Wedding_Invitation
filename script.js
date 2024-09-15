@@ -65,12 +65,13 @@ function loadGalleryImages() {
     }
 }
 
-//Gallery 2 
+//Gallery 2
 document.addEventListener('DOMContentLoaded', function() {
     const showcaseImage = document.getElementById('showcaseImage');
     const previousBtn = document.getElementById('previousBtn');
     const nextBtn = document.getElementById('nextBtn');
     const imageTracker = document.getElementById('imageTracker');
+    const dotContainer = document.getElementById('dotContainer');
 
     let currentImageIndex = 1;
     const totalImages = 15;
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showcaseImage.style.backgroundImage = `url(${imageBasePath}/img_${imageIndex}.jpg)`;
         // imageTracker.textContent = `${imageIndex} / ${totalImages}`;
         preloadSurroundingImages(imageIndex);
+        updateDotIndicators();
     }
 
     function showNextImage() {
@@ -108,10 +110,32 @@ document.addEventListener('DOMContentLoaded', function() {
         displayImage(currentImageIndex);
     }
 
+    function createDotIndicators() {
+        for (let i = 1; i <= totalImages; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            dot.addEventListener('click', () => {
+                currentImageIndex = i;
+                displayImage(currentImageIndex);
+            });
+            dotContainer.appendChild(dot);
+        }
+    }
+
+    function updateDotIndicators() {
+        const dots = dotContainer.getElementsByClassName('dot');
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.toggle('active', i === currentImageIndex - 1);
+        }
+    }
+
     // 초기 이미지들 프리로드
     for (let i = 1; i <= imagesToPreload; i++) {
         preloadImage(i);
     }
+
+    // 도트 인디케이터 생성
+    createDotIndicators();
 
     // 초기 이미지 표시
     displayImage(currentImageIndex);
@@ -120,6 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
     nextBtn.addEventListener('click', showNextImage);
     previousBtn.addEventListener('click', showPreviousImage);
 });
+
 
 // Copy account number
 function setupCopyAccountButtons() {
