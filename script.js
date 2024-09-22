@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dotContainer = document.getElementById('dotContainer');
 
     let currentImageIndex = 1;
-    const totalImages = 15;
+    const totalImages = 20;
     const imageBasePath = './img';
     const imagesToPreload = 5; // 미리 로드할 이미지 수
     const loadedImages = new Set();
