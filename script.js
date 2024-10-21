@@ -270,11 +270,11 @@ document.addEventListener('keydown', function(e) {
         return false;
     }
 
-    // Ctrl+P (인쇄), Ctrl+S (저장) 등 방지
-    if ((e.ctrlKey && e.key === 'p') || (e.ctrlKey && e.key === 's')) {
-        alert('이 기능은 금지되어 있습니다.');
-        e.preventDefault();
-    }
+    // // Ctrl+P (인쇄), Ctrl+S (저장) 등 방지
+    // if ((e.ctrlKey && e.key === 'p') || (e.ctrlKey && e.key === 's')) {
+    //     alert('이 기능은 금지되어 있습니다.');
+    //     e.preventDefault();
+    // }
 });
 
 // document.addEventListener('touchend', function(e) {
@@ -294,15 +294,15 @@ navigator.mediaDevices.enumerateDevices().then(function(devices) {
 });
 
         // 핀치 줌 방지
-document.addEventListener('touchstart', function(event) {
-    if (event.touches.length > 1) {
-        event.preventDefault(); // 핀치 줌 방지
-    }
-}, { passive: false });
+// document.addEventListener('touchstart', function(event) {
+//     if (event.touches.length > 1) {
+//         event.preventDefault(); // 핀치 줌 방지
+//     }
+// }, { passive: false });
 
-document.addEventListener('gesturestart', function(event) {
-    event.preventDefault(); // 핀치 줌 방지
-});
+// document.addEventListener('gesturestart', function(event) {
+//     event.preventDefault(); // 핀치 줌 방지
+// });
 
 // // 드래그 방지
 // document.addEventListener('dragstart', function(e) {
